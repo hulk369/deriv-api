@@ -3,7 +3,7 @@ const { find } = require('rxjs/operators');
 const DerivAPI = require('../dist/DerivAPI');
 
 const token = process.env.DERIV_TOKEN;
-const app_id = process.env.APP_ID || 1234;
+const app_id = process.env.APP_ID || 33240;
 const expected_payout = process.env.EXPECTED_PAYOUT || 19;
 
 if (!token) {

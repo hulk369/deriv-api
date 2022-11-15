@@ -10,7 +10,7 @@
   "scripts": {
     "test": "jest --verbose --forceExit",
     "build": "webpack --config webpack.config.js",
-    "examples": "npm run build -- --display=none; for e in examples/*; do node $e; done",
+    "examples": "npm run build -- --; for e in examples/*; do node $e; done",
     "coverage": "codecov",
     "devel": "npm test -- --watch --notify --onlyChanged",
     "lint": "eslint",
