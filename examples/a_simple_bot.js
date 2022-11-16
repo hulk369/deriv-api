@@ -3,7 +3,7 @@ const { find } = require('rxjs/operators');
 const DerivAPI = require('../dist/DerivAPI');
 
 const token = process.env.DERIV_TOKEN;
-const app_id = process.env.APP_ID || 33240;
+const app_id = process.env.APP_ID || 1234;
 const expected_payout = process.env.EXPECTED_PAYOUT || 19;
 
 if (!token) {
@@ -51,8 +51,7 @@ async function main() {
         // Wait until payout is greater than USD 19
         await contract.onUpdate().pipe(find(({ payout }) => payout.value >= expected_payout)).toPromise();
 
-        const newLocal = await contract.buy();
-        const buy = newLocal;
+        const buy = await contract.buy();
 
         console.log(`Buy price is: ${buy.price.currency} ${buy.price.display}`);
 
